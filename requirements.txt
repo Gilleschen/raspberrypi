@@ -1,0 +1,6 @@
+Flask
+pygame
+gTTS
+opencv-python
+PyAudio
+adafruit-circuitpython-servokit

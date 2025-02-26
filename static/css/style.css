@@ -1,0 +1,202 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: relative;
+  padding-top: 50px;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* 登出按鈕 */
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+.logout-btn:hover {
+  background-color: darkred;
+}
+
+/*音效按鈕*/
+.playSoundBtn {
+  background-color: #20bc05d3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.playSoundBtn:hover {
+  background-color: #178104;
+}
+.checkStatusBtn{
+    background-color: #827e684b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.checkStatusBtn:hover {
+    background-color: #827e68;
+}
+
+/* Webcam 視訊畫面 */
+.webcam-container {
+  width: 930px;
+  height: 480;
+  border: 2px solid black;
+  margin-bottom: 40px;
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.webcam-feed {
+  width: 640px;
+  height: 480px;
+  object-fit: cover;
+}
+
+#statusMessage,
+#soundMessage,
+#bluetoothMessage {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+/* 伺服馬達控制按鈕 */
+.servo-control {
+  margin: 0;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.arrow-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.middle-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.arrow {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.arrow:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.arrow:active {
+  transform: scale(0.95);
+}
+
+.reset-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ff9800;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  background-color: #e68a00;
+  transform: scale(1.05);
+}
+
+.reset-button:active {
+  transform: scale(0.95);
+}
+
+.arrow-icon,
+.reset-icon {
+  font-size: 24px;
+  font-style: normal;
+}
+
+/* 音訊控制按鈕 */
+.audio-control {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.audio-toggle {
+  background-color: #28a745;
+  margin-bottom: 15px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.audio-toggle.off {
+  background-color: #dc3545;
+} 

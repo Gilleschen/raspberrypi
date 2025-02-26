@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>工具箱</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <button class="logout-btn" onclick="location.href='/logout'">登出</button>
+    <div class="container">
+      <h1>Webcam</h1>
+      <div class="webcam-container">
+        <img
+          src="{{ url_for('video_feed') }}"
+          class="webcam-feed"
+          alt="Webcam Live Stream"
+        />
+        <!-- 伺服馬達控制按鈕 -->
+        <div class="servo-control">
+          <div class="arrow-buttons">
+            <button onclick="moveUp()" class="arrow up-arrow">
+              <i class="arrow-icon">▲</i>
+            </button>
+            <div class="middle-row">
+              <button onclick="rotateLeft()" class="arrow left-arrow">
+                <i class="arrow-icon">◀</i>
+              </button>
+              <button onclick="resetServo()" class="reset-button">
+                <i class="reset-icon">↻</i>
+              </button>
+              <button onclick="rotateRight()" class="arrow right-arrow">
+                <i class="arrow-icon">▶</i>
+              </button>
+            </div>
+            <button onclick="moveDown()" class="arrow down-arrow">
+              <i class="arrow-icon">▼</i>
+            </button>
+            <div id="servoMessage"></div>
+            <button id="takePhotoBtn" onclick="takePhoto()">拍照</button>
+          </div>
+        </div>
+      </div>
+      <h1>工具箱</h1>
+      <div class="button-group">
+        <button class="checkStatusBtn" id="checkStatusBtn">檢查狀態</button>
+        <button id="audioToggleBtn">開啟麥克風</button>
+        <button id="bluetoothBtn">連接藍芽</button>
+      </div>
+      <div class="button-group">
+        <button class="playSoundBtn" data-sound="sound01">不要再看電腦</button>
+        <button class="playSoundBtn" data-sound="sound02">幫我叫媽媽</button>
+        <button class="playSoundBtn" data-sound="sound03">注意安全</button>
+        <button class="playSoundBtn" data-sound="sound04">趕緊睡覺</button>
+        <button class="playSoundBtn" data-sound="sound05">喝水一下</button>
+      </div>
+      <div class="button-group custom-input-group">
+        <input
+          type="text"
+          id="customMessage"
+          placeholder="輸入想說的話"
+          maxlength="50"
+          class="custom-input"
+        />
+        <button class="playSoundBtn" onclick="sendCustomMessage()">
+          播放語音
+        </button>
+      </div>
+
+      <hr />
+
+      <div id="statusMessage"></div>
+      <div id="soundMessage"></div>
+      <div id="bluetoothMessage"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
