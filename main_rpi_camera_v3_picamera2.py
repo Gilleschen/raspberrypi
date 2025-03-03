@@ -336,7 +336,7 @@ if __name__ == '__main__':
     try:
         # 初始化相機
         init_camera()
-        app.run(host='192.168.192.1', port=5000, debug=True)
+        app.run(host='192.168.192.4', port=5000, debug=True)
     except Exception as e:
         print(f"啟動服務時發生錯誤: {e}")
     finally:
